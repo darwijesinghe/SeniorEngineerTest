@@ -1,0 +1,17 @@
+﻿<nav class="navbar navbar-expand px-3 border-bottom bg-light bg-gradient">
+    <button class="btn" id="sidebar-toggle" type="button">
+        <i class="fa-solid fa-bars text-muted"></i>
+    </button>
+    <div class="navbar-collapse navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                    <img src="~/img/unknown_user_pic.png" class="avatar img-fluid rounded-circle" alt="">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a asp-controller="Home" asp-action="Index" class="dropdown-item"><i class="fa fa-power-off me-3"></i>Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,10 @@
+﻿@model ProductsViewModel
+
+@* Delete product page *@
+
+<form asp-controller="Home" asp-action="DeleteProduct" method="post">
+
+    <input asp-for="Product.ProductId" type="hidden" />
+    <p class="fs-6">Are you sure you want to delete @Model.Product.Name ?</p>
+
+</form> 

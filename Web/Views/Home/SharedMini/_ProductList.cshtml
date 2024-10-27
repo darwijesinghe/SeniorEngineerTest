@@ -1,0 +1,57 @@
+﻿@{
+    var tableId = $"jq-products-table-id";
+}
+
+@model ProductsViewModel
+
+@* Product list page *@
+
+@if (Model.List.Any())
+{
+    foreach (var p in Model.List)
+    {
+        <tr>
+            <td>@p.ProductId</td>
+            <td>@p.Name</td>
+            <td>@p.Category</td>
+            <td>@p.Price</td>
+            <td>@p.Stock</td>
+            <td>
+                <div class="btn-group btn-group-sm d-flex align-items-center justify-content-center" style="max-width:80px;">
+                    <button class="btn btn-primary jq-product-edit-btn" data-edit-id="@p.ProductId"><i class="fa fa-pencil"></i></button>
+                    <button type="button" class="btn btn-danger jq-product-delete-btn" data-delete-id="@p.ProductId"><i class="fa fa-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+    }
+
+    @section scripts{
+
+        <script>
+            $(document).ready(function () {
+                
+                // Distroy datatable
+                $("#@tableId").DataTable().destroy();
+
+                // Init datatable
+                $("#@tableId").DataTable({
+                    layout: {
+                        topStart: {
+                            buttons: ['excelHtml5', 'pdfHtml5']
+                        }
+                    }
+                });
+            })
+        </script>
+    }
+}
+else
+{
+    <tr>
+        <td colspan="6" class="text-center">
+            <div class="alert alert-danger">
+                No record found !
+            </div>
+        </td>
+    </tr>
+}

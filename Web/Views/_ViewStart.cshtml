@@ -1,0 +1,12 @@
+﻿@{
+    bool isMainLayout = ViewBag.isLogged ?? false;
+
+    if (isMainLayout)
+    {
+        Layout = "Layout/_Layout";
+    }
+    else
+    {
+        Layout = "Layout/_AnonymousLayout";
+    }
+}

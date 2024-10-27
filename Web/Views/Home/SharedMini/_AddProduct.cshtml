@@ -1,0 +1,40 @@
+﻿@model ProductsViewModel
+
+@* Add product page *@
+
+<form asp-controller="Home" asp-action="AddProduct" asp-route-id="@Model.Product.ProductId" method="post">
+
+    <div class="row mb-3">
+        <div asp-validation-summary="ModelOnly"></div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12">
+            <label asp-for="Product.Name">Product</label>
+            <input type="text" class="form-control" asp-for="Product.Name" />
+            <span asp-validation-for="Product.Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <label asp-for="Product.Category">Category</label>
+            <input type="text" class="form-control" asp-for="Product.Category" />
+            <span asp-validation-for="Product.Category" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <label asp-for="Product.Price">Price</label>
+            <input type="number" class="form-control" asp-for="Product.Price" />
+            <span asp-validation-for="Product.Price" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <label asp-for="Product.Stock">Stock</label>
+            <input type="number" class="form-control" asp-for="Product.Stock" />
+            <span asp-validation-for="Product.Stock" class="text-danger"></span>
+        </div>
+    </div>
+
+</form>
